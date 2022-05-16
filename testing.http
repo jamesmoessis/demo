@@ -1,0 +1,11 @@
+### Should have baggage-key-2 but doesn't
+GET http://localhost:8080/path
+traceparent:00-00000000000000003e7eb8c882e31157-6585b8bcb4cd1caf-01
+baggage:baggage-key-1=abc
+baggage:baggage-key-2=def
+
+
+### Should have no baggage but does (baggage-key-3 not in remote-fields)
+GET http://localhost:8080/path
+traceparent:00-00000000000000003e7eb8c882e31157-6585b8bcb4cd1caf-01
+baggage:baggage-key-3=ghi
